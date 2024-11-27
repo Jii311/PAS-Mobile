@@ -29,6 +29,11 @@ class Likecontroller extends GetxController {
             idTeam TEXT, 
             strTeam TEXT, 
             strBadge TEXT,
+            strTeamAlternate TEXT,
+            strLeague TEXT,
+            strStadium TEXT,
+            strLocation TEXT,
+            strDescriptionEN TEXT,
             isLiked INTEGER 
           )
         ''');
@@ -58,7 +63,6 @@ class Likecontroller extends GetxController {
   }
 
   Rx<bool> getLikedById(String idTeam) {
-    // Assuming tasks is a list of models with properties `id` and `isLiked`
     for (var model in tasks) {
       if (model.idTeam == idTeam) {
         return true.obs; // Return the isLiked status if id matches

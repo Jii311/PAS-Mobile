@@ -9,32 +9,34 @@ class HomeMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Obx(() {
-            if (postController.isLoading.value) {
-              return Center(child: CircularProgressIndicator());
-            }
-            return GridView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              shrinkWrap: true,
-              physics: BouncingScrollPhysics(),
-              itemCount: postController.postList.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                mainAxisExtent: 250,
-              ),
-              itemBuilder: (context, index) {
-                return TeamCard(
-                  model: postController.postList[index],
-                );
-              },
-            );
-          }),
-        ],
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Obx(() {
+              if (postController.isLoading.value) {
+                return Center(child: CircularProgressIndicator());
+              }
+              return GridView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                shrinkWrap: true,
+                physics: BouncingScrollPhysics(),
+                itemCount: postController.postList.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  mainAxisExtent: 250,
+                ),
+                itemBuilder: (context, index) {
+                  return TeamCard(
+                    model: postController.postList[index],
+                  );
+                },
+              );
+            }),
+          ],
+        ),
       ),
     );
   }

@@ -8,12 +8,10 @@ class TeamDetailed extends StatelessWidget {
     final ApiModel model = Get.arguments;
 
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 50,
-            ),
             Stack(
               children: [
                 Container(
@@ -21,7 +19,7 @@ class TeamDetailed extends StatelessWidget {
                   height: 150,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
-                    colors: [Colors.black, Colors.transparent],
+                    colors: [Color(0xff222831), Colors.transparent],
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                   )),
@@ -39,10 +37,46 @@ class TeamDetailed extends StatelessWidget {
               alignment: Alignment.topLeft,
               width: MediaQuery.of(context).size.width,
               height: 1500,
-              decoration: BoxDecoration(color: Colors.black),
-              child: Text(
-                'Name : ${model.strTeam}',
-                style: TextStyle(color: Colors.white),
+              decoration: BoxDecoration(color: Color(0xff222831)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Name : ${model.strTeam}',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Alternate Name : ${model.strTeamAlternate}',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Stadium : ${model.strStadium}',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Address : ${model.strLocation}',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Description : ${model.strDescriptionEN}',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
               ),
             )
           ],

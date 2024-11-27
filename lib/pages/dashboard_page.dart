@@ -44,7 +44,6 @@ Widget _navBar(DashboardController dashboardController) {
       borderRadius: BorderRadius.circular(16),
     ),
     child: ClipRRect(
-      borderRadius: BorderRadius.circular(16),
       child: Obx(
         () => BottomNavigationBar(
           showSelectedLabels: true,

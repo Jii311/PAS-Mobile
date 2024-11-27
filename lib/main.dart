@@ -26,10 +26,7 @@ class MyApp extends StatelessWidget {
           name: '/dashboard',
           page: () => DashboardPage(),
         ),
-        GetPage(
-          name: '/detailed',
-          page: () => TeamDetailed()
-        ),
+        GetPage(name: '/detailed', page: () => TeamDetailed()),
       ],
     );
   }
